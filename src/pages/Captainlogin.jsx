@@ -10,7 +10,7 @@ const Captainlogin = () => {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
-  const { captain, setCaptain } = React.useContext(CaptainDataContext)
+  const {  setCaptain } = React.useContext(CaptainDataContext)
   const navigate = useNavigate()
 
 
@@ -28,7 +28,7 @@ const Captainlogin = () => {
       const data = response.data
 
       setCaptain(data.captain)
-      localStorage.setItem('token', data.token)
+      localStorage.setItem('cap_token', data.token);
       navigate('/captain-home')
 
     }
@@ -48,7 +48,7 @@ const Captainlogin = () => {
               submitHandler(e);
             }}
           >
-            <h3 className='text-lg font-medium mb-2'>What's your email</h3>
+            <h3 className='text-lg font-medium mb-2'>What&apos;s your email</h3>
             <input
               required
               value={email}

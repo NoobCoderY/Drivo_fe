@@ -12,16 +12,17 @@ const CaptainDetails = () => {
 
     const getTodayEarning = async () => {
         
-       await axios.get(`${import.meta.env.VITE_BASE_URL}/captains/today-fare`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                setTodayEarning(response.data)
-                
-            }
-        })
+       await axios
+         .get(`${import.meta.env.VITE_BASE_URL}/captains/today-fare`, {
+           headers: {
+             Authorization: `Bearer ${localStorage.getItem('cap_token')}`,
+           },
+         })
+         .then((response) => {
+           if (response.status === 200) {
+             setTodayEarning(response.data);
+           }
+         });
         
     }
 

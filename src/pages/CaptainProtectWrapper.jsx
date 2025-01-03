@@ -7,7 +7,7 @@ const CaptainProtectWrapper = ({
     children
 }) => {
 
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('cap_token');
     const navigate = useNavigate()
     const {  setCaptain } = useContext(CaptainDataContext)
     const [ isLoading, setIsLoading ] = useState(true)
@@ -35,7 +35,7 @@ const CaptainProtectWrapper = ({
             // eslint-disable-next-line no-unused-vars
             .catch(err => {
 
-                localStorage.removeItem('token')
+                localStorage.removeItem('cap_token');
                 navigate('/captain-login')
             })
     }, [ token ])

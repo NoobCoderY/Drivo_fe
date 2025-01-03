@@ -61,7 +61,7 @@ const CaptainHome = () => {
       },
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${localStorage.getItem('cap_token')}`,
         },
       }
     );
